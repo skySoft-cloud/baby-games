@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft, Clock, ChevronRight, X, Search, Sparkles } from 'lucide-react'
+import { ArrowLeft, Clock, X, Search, Sparkles } from 'lucide-react'
 import { cn } from '../lib/utils'
 import { games, categories, type Game } from '../data/games'
 
