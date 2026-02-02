@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 温暖的奶油色背景 */
+    --background: 40 60% 97%;
+    --foreground: 25 40% 20%;
+
+    /* 温暖橙色主色 - 活力亲切 */
+    --primary: 25 95% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* 柔和粉紫辅助色 */
+    --secondary: 320 60% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* 强调色 - 活力黄 */
+    --accent: 45 95% 55%;
+    --accent-foreground: 25 40% 15%;
+
+    /* 柔和的灰色 */
+    --muted: 40 30% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* 卡片 */
+    --card: 0 0% 100%;
+    --card-foreground: 25 40% 20%;
+
+    /* 自定义温暖色系 */
+    --warm: 40 50% 96%;
+    --warm-light: 45 55% 98%;
+    --coral: 15 90% 65%;
+    --coral-light: 15 85% 92%;
+    --sky: 200 85% 65%;
+    --sky-light: 200 80% 92%;
+    --mint: 160 60% 60%;
+    --mint-light: 160 55% 92%;
+    --lavender: 280 60% 72%;
+    --lavender-light: 280 65% 93%;
+    --sunny: 45 95% 60%;
+    --sunny-light: 45 90% 92%;
+
+    --radius: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-muted;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-primary via-coral to-secondary bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .press-effect {
+    @apply transition-transform active:scale-95;
+  }
+
+  .card-playful {
+    @apply bg-card rounded-3xl shadow-lg border-2 border-muted/50;
+  }
+}
