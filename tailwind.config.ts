@@ -69,6 +69,12 @@ export default {
         'fade-in': 'fade-in 0.3s ease-out',
         'bounce-soft': 'bounce-soft 2s ease-in-out infinite',
         'wiggle': 'wiggle 1s ease-in-out infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'pulse-fast': 'pulse 1s ease-in-out infinite',
+        'zoom-in': 'zoom-in 0.5s ease-out',
+        'magic-reveal': 'magic-reveal 0.8s ease-out',
+        'card-flip': 'card-flip 0.6s ease-in-out',
+        'tada': 'tada 1s ease-in-out',
       },
       keyframes: {
         'float': {
@@ -94,6 +100,26 @@ export default {
         'wiggle': {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
+        },
+        'zoom-in': {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'magic-reveal': {
+          '0%': { transform: 'rotateY(90deg)', opacity: '0' },
+          '100%': { transform: 'rotateY(0deg)', opacity: '1' },
+        },
+        'card-flip': {
+          '0%': { transform: 'rotateY(0deg)' },
+          '50%': { transform: 'rotateY(90deg)' },
+          '100%': { transform: 'rotateY(0deg)' },
+        },
+        'tada': {
+          '0%': { transform: 'scale(1)' },
+          '10%, 20%': { transform: 'scale(0.9) rotate(-5deg)' },
+          '30%, 50%, 70%, 90%': { transform: 'scale(1.1) rotate(5deg)' },
+          '40%, 60%, 80%': { transform: 'scale(1.1) rotate(-5deg)' },
+          '100%': { transform: 'scale(1) rotate(0)' },
         },
       },
       fontFamily: {

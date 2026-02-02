@@ -86,4 +86,13 @@
   .card-playful {
     @apply bg-card rounded-3xl shadow-lg border-2 border-muted/50;
   }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

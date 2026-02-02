@@ -14,10 +14,10 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
       <div className="flex items-center justify-center gap-3 mb-6">
         <div className="relative">
           <div className="w-12 h-12 bg-gradient-to-br from-sunny to-primary rounded-2xl flex items-center justify-center shadow-lg">
-            <Baby className="w-7 h-7 text-primary-foreground" />
+            <Baby className="w-7 h-7 text-white drop-shadow-sm" />
           </div>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-mint rounded-full flex items-center justify-center">
-            <Sparkles className="w-2.5 h-2.5 text-primary-foreground" />
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-mint rounded-full flex items-center justify-center shadow-sm">
+            <Sparkles className="w-2.5 h-2.5 text-white" />
           </div>
         </div>
         <div>
