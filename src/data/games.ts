@@ -1281,9 +1281,9 @@ export const games: Game[] = [
 
 // 分类信息
 export const categories = {
-  movement: { name: '运动游戏', emoji: '🏃', color: 'from-primary to-coral' },
-  creative: { name: '创意游戏', emoji: '🎨', color: 'from-lavender to-secondary' },
-  cognitive: { name: '认知游戏', emoji: '🧠', color: 'from-sky to-mint' },
-  social: { name: '社交情感', emoji: '💝', color: 'from-secondary to-lavender' },
-  sensory: { name: '感官探索', emoji: '✨', color: 'from-sunny to-primary' },
+  movement: { name: '运动游戏', emoji: '🏃', color: 'from-orange-400 to-rose-400' },
+  creative: { name: '创意游戏', emoji: '🎨', color: 'from-purple-400 to-pink-400' },
+  cognitive: { name: '认知游戏', emoji: '🧠', color: 'from-cyan-400 to-teal-400' },
+  social: { name: '社交情感', emoji: '💝', color: 'from-pink-400 to-rose-400' },
+  sensory: { name: '感官探索', emoji: '✨', color: 'from-amber-400 to-orange-400' },
 }
