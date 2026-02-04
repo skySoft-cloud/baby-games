@@ -5,7 +5,7 @@ export interface Game {
   description: string
   howToPlay: string[]
   benefits: string
-  category: 'movement' | 'creative' | 'cognitive' | 'social' | 'sensory'
+  category: 'movement' | 'creative' | 'cognitive' | 'social' | 'sensory' | 'school'
   duration: string
   materials?: string[]
 }
@@ -23,6 +23,77 @@ export const games: Game[] = [
       "可以一起模仿，比比谁更像"
     ],
     benefits: "锻炼身体协调性和想象力",
+    category: "movement",
+    duration: "5-10分钟"
+  },
+  {
+    id: 86,
+    name: "床上蹦蹦跳",
+    emoji: "🛏️",
+    description: "在床上轻轻蹦跳（注意安全）",
+    howToPlay: [
+      "铺好床铺，确保周围没有危险物品",
+      "和宝宝一起轻轻地在床上跳几下",
+      "可以边跳边数数：1、2、3..."
+    ],
+    benefits: "满足宝宝蹦跳需求，释放精力",
+    category: "movement",
+    duration: "5-10分钟"
+  },
+  {
+    id: 87,
+    name: "沙发隧道",
+    emoji: "🛋️",
+    description: "在沙发间爬行探险",
+    howToPlay: [
+      "利用沙发之间的空隙当作隧道",
+      "让宝宝从一边爬到另一边",
+      "可以放些软玩具当障碍物"
+    ],
+    benefits: "锻炼爬行能力和空间感知",
+    category: "movement",
+    duration: "5-10分钟"
+  },
+  {
+    id: 88,
+    name: "客厅障碍赛",
+    emoji: "🏃",
+    description: "利用家具设置安全障碍路线",
+    howToPlay: [
+      "用枕头、靠垫设置障碍路线",
+      "让宝宝绕过障碍物走到终点",
+      "可以增加钻、跨、跳等动作"
+    ],
+    benefits: "锻炼身体协调性和灵活性",
+    category: "movement",
+    duration: "10-15分钟"
+  },
+  {
+    id: 89,
+    name: "影子舞会",
+    emoji: "💃",
+    description: "在灯光下做影子表演",
+    howToPlay: [
+      "关掉大部分灯，只留一盏台灯",
+      "在墙上做出各种手势投影",
+      "让宝宝模仿或创造新的影子"
+    ],
+    benefits: "锻炼手部精细动作和想象力",
+    category: "movement",
+    duration: "10-15分钟",
+    materials: ["台灯"]
+  },
+  {
+    id: 90,
+    name: "地板滑行",
+    emoji: "⛸️",
+    description: "穿着袜子在光滑地面滑行",
+    howToPlay: [
+      "确保地面干净安全",
+      "让宝宝穿上厚袜子在地面滑行",
+      "可以从客厅滑到卧室"
+    ],
+    benefits: "锻炼平衡能力和腿部力量",
     category: "movement",
     duration: "5-10分钟"
   },
@@ -291,6 +362,81 @@ export const games: Game[] = [
     materials: ["彩泥/面团", "小模具"]
   },
   {
+    id: 91,
+    name: "晚间故事书制作",
+    emoji: "📚",
+    description: "用旧杂志或废纸制作睡前故事书",
+    howToPlay: [
+      "收集旧杂志、彩色纸张",
+      "让宝宝挑选喜欢的图片",
+      "一起贴在纸上编故事"
+    ],
+    benefits: "培养创造力和语言表达能力",
+    category: "creative",
+    duration: "15-20分钟",
+    materials: ["旧杂志", "胶水", "彩笔"]
+  },
+  {
+    id: 92,
+    name: "家庭相框DIY",
+    emoji: "🖼️",
+    description: "用家里材料制作相框",
+    howToPlay: [
+      "用硬纸板剪出相框形状",
+      "让宝宝用贴纸、彩笔装饰",
+      "放入家庭照片展示"
+    ],
+    benefits: "锻炼动手能力和审美",
+    category: "creative",
+    duration: "15-25分钟",
+    materials: ["硬纸板", "贴纸", "彩笔"]
+  },
+  {
+    id: 93,
+    name: "袜子玩偶制作",
+    emoji: "🧦",
+    description: "用旧袜子制作可爱玩偶",
+    howToPlay: [
+      "找一只干净的旧袜子",
+      "用纽扣、丝带装饰成玩偶",
+      "编故事一起玩"
+    ],
+    benefits: "培养环保意识和创造力",
+    category: "creative",
+    duration: "20-30分钟",
+    materials: ["旧袜子", "纽扣", "丝带"]
+  },
+  {
+    id: 94,
+    name: "夜晚星空画",
+    emoji: "🌌",
+    description: "在黑色纸上制作星空画",
+    howToPlay: [
+      "准备黑色纸张和亮色颜料",
+      "用棉签蘸白颜料点出星星",
+      "还可以画月亮和流星"
+    ],
+    benefits: "激发想象力和艺术感知",
+    category: "creative",
+    duration: "15-20分钟",
+    materials: ["黑纸", "白色颜料", "棉签"]
+  },
+  {
+    id: 95,
+    name: "纸盘夜灯",
+    emoji: "💡",
+    description: "制作温馨的小夜灯",
+    howToPlay: [
+      "用纸盘剪出镂空图案",
+      "贴上半透明彩纸",
+      "放在小台灯前形成投影"
+    ],
+    benefits: "锻炼精细动作和创造力",
+    category: "creative",
+    duration: "20-30分钟",
+    materials: ["纸盘", "彩纸", "小灯"]
+  },
+  {
     id: 20,
     name: "手指画画",
     emoji: "🖐️",
@@ -501,6 +647,78 @@ export const games: Game[] = [
     category: "cognitive",
     duration: "5-10分钟",
     materials: ["彩色玩具/物品"]
+  },
+  {
+    id: 96,
+    name: "夜间寻宝",
+    emoji: "🔦",
+    description: "在房间里寻找特定物品",
+    howToPlay: [
+      "关掉大灯，只开小夜灯",
+      "告诉宝宝要找的物品",
+      "让他在黑暗中寻找"
+    ],
+    benefits: "锻炼观察力和空间认知",
+    category: "cognitive",
+    duration: "10-15分钟",
+    materials: ["小夜灯"]
+  },
+  {
+    id: 97,
+    name: "晚安记忆游戏",
+    emoji: "🧠",
+    description: "回忆一天中发生的事情",
+    howToPlay: [
+      "和宝宝一起回忆今天做了什么",
+      "从早上开始，一件件回忆",
+      "鼓励宝宝说出细节"
+    ],
+    benefits: "锻炼记忆力和语言表达",
+    category: "cognitive",
+    duration: "10-15分钟"
+  },
+  {
+    id: 98,
+    name: "家居物品分类",
+    emoji: "🗂️",
+    description: "将家中物品按用途分类",
+    howToPlay: [
+      "选出几种常见的家居用品",
+      "让宝宝按用途分类（厨房用具、洗漱用品等）",
+      "说说每样物品的用途"
+    ],
+    benefits: "提高分类思维和生活认知",
+    category: "cognitive",
+    duration: "10-15分钟",
+    materials: ["家居用品"]
+  },
+  {
+    id: 99,
+    name: "房间形状侦探",
+    emoji: "🔍",
+    description: "在房间里寻找不同形状的物品",
+    howToPlay: [
+      "让宝宝寻找圆形、方形、三角形的物品",
+      "数一数每种形状有几个",
+      "比比谁找到的多"
+    ],
+    benefits: "认识形状和观察力训练",
+    category: "cognitive",
+    duration: "10-15分钟"
+  },
+  {
+    id: 100,
+    name: "睡前数学游戏",
+    emoji: "🔢",
+    description: "结合日常生活学数学",
+    howToPlay: [
+      "数数宝宝有几个玩具",
+      "比较两个物品的大小",
+      "练习简单的加减法"
+    ],
+    benefits: "启蒙数学概念和计算能力",
+    category: "cognitive",
+    duration: "5-10分钟"
   },
   {
     id: 34,
@@ -771,6 +989,77 @@ export const games: Game[] = [
     materials: ["毛绒玩具"]
   },
   {
+    id: 101,
+    name: "晚安感恩时间",
+    emoji: "🙏",
+    description: "分享今天感到开心的事情",
+    howToPlay: [
+      "每个人分享今天最开心的一件事",
+      "可以是小事也可以是大事",
+      "感谢家人的一天陪伴"
+    ],
+    benefits: "培养感恩心态和表达能力",
+    category: "social",
+    duration: "10-15分钟"
+  },
+  {
+    id: 102,
+    name: "家庭新闻播报",
+    emoji: "📢",
+    description: "宝宝当小主播分享一天趣事",
+    howToPlay: [
+      "让宝宝站在沙发上当主播",
+      "分享今天学到的新东西",
+      "家长当观众给予掌声"
+    ],
+    benefits: "锻炼表达能力和自信心",
+    category: "social",
+    duration: "10-15分钟"
+  },
+  {
+    id: 103,
+    name: "睡前拥抱仪式",
+    emoji: "🤗",
+    description: "建立温馨的睡前拥抱传统",
+    howToPlay: [
+      "按照家庭成员人数拥抱",
+      "可以加上亲吻或挠痒痒",
+      "说说对彼此的喜爱"
+    ],
+    benefits: "增强家庭纽带和安全感",
+    category: "social",
+    duration: "5-10分钟"
+  },
+  {
+    id: 104,
+    name: "家庭小帮手",
+    emoji: " помощник ",
+    description: "让宝宝参与简单的家务活动",
+    howToPlay: [
+      "分配适合年龄的小任务",
+      "比如整理玩具、递纸巾",
+      "完成后给予表扬和感谢"
+    ],
+    benefits: "培养责任感和成就感",
+    category: "social",
+    duration: "10-15分钟",
+    materials: ["小抹布", "玩具收纳盒"]
+  },
+  {
+    id: 105,
+    name: "晚安故事剧场",
+    emoji: "🎭",
+    description: "用肢体语言表演睡前故事",
+    howToPlay: [
+      "选择简短的睡前故事",
+      "用动作和表情表演出来",
+      "让宝宝也参与表演"
+    ],
+    benefits: "增进亲子关系和表达能力",
+    category: "social",
+    duration: "15-20分钟"
+  },
+  {
     id: 52,
     name: "打电话",
     emoji: "📱",
@@ -991,6 +1280,80 @@ export const games: Game[] = [
     benefits: "锻炼听觉辨别能力",
     category: "sensory",
     duration: "5-10分钟"
+  },
+  {
+    id: 106,
+    name: "夜间触感探索",
+    emoji: "🤲",
+    description: "在微光下触摸不同质感的物品",
+    howToPlay: [
+      "准备不同质感的物品（毛刷、丝绸、砂纸）",
+      "在柔和灯光下让宝宝触摸",
+      "描述触感的不同"
+    ],
+    benefits: "发展触觉感知能力",
+    category: "sensory",
+    duration: "10-15分钟",
+    materials: ["不同质感的物品"]
+  },
+  {
+    id: 107,
+    name: "安静聆听游戏",
+    emoji: "🤫",
+    description: "静心聆听房间里的各种声音",
+    howToPlay: [
+      "关掉电子设备，保持安静",
+      "一起静静聆听房间里的声音",
+      "冰箱嗡嗡声、空调声、外面的声音"
+    ],
+    benefits: "培养专注力和听觉敏锐度",
+    category: "sensory",
+    duration: "5-10分钟"
+  },
+  {
+    id: 108,
+    name: "温水泡泡浴",
+    emoji: "🛁",
+    description: "在安全环境下玩泡泡",
+    howToPlay: [
+      "准备温水和安全泡泡液",
+      "让宝宝用手拍打泡泡",
+      "感受泡泡破裂的触感"
+    ],
+    benefits: "放松身心，丰富触觉体验",
+    category: "sensory",
+    duration: "10-15分钟",
+    materials: ["温水", "安全泡泡液"]
+  },
+  {
+    id: 109,
+    name: "柔软触感袋",
+    emoji: " sack ",
+    description: "制作填充不同材料的触感袋",
+    howToPlay: [
+      "用透明袋子装不同材料（米粒、棉花、豆子）",
+      "让宝宝通过触摸猜测内容",
+      "感受不同材料的质地"
+    ],
+    benefits: "丰富触觉体验和认知能力",
+    category: "sensory",
+    duration: "10-15分钟",
+    materials: ["塑料袋", "不同填充物"]
+  },
+  {
+    id: 110,
+    name: "夜晚芳香疗法",
+    emoji: "🌸",
+    description: "体验安全的天然香味",
+    howToPlay: [
+      "准备安全的天然香味（柠檬片、薄荷叶）",
+      "让宝宝闻一闻不同香味",
+      "讨论香味带来的感受"
+    ],
+    benefits: "发展嗅觉感知和放松心情",
+    category: "sensory",
+    duration: "5-10分钟",
+    materials: ["柠檬片", "薄荷叶"]
   },
   {
     id: 67,
@@ -1277,6 +1640,222 @@ export const games: Game[] = [
     duration: "5-10分钟",
     materials: ["扇子/风车"]
   },
+  // ==================== 幼儿园游戏 ====================
+  {
+    id: 111,
+    name: "老鹰捉小鸡",
+    emoji: "🐔",
+    description: "经典团体游戏，培养团队合作",
+    howToPlay: [
+      "一人当老鹰，一人当母鸡",
+      "其他小朋友当小鸡排成队",
+      "母鸡保护小鸡不被老鹰捉到"
+    ],
+    benefits: "锻炼反应能力，培养团队合作精神",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 112,
+    name: "丢手绢",
+    emoji: " khăn ",
+    description: "围坐一圈传递手绢的趣味游戏",
+    howToPlay: [
+      "大家围坐成一个圆圈",
+      "一个人拿着手绢在圈外跑",
+      "悄悄把手绢放在别人身后"
+    ],
+    benefits: "培养注意力和反应能力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 113,
+    name: "一二三木头人",
+    emoji: "⽊",
+    description: "听口令停止动作的经典游戏",
+    howToPlay: [
+      "一个小朋友当木头人背对着大家",
+      "其他小朋友向木头人靠近",
+      "木头人回头时所有人必须停止动作"
+    ],
+    benefits: "锻炼自控能力和专注力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 114,
+    name: "击鼓传花",
+    emoji: "🌺",
+    description: "音乐停止时传递物品的游戏",
+    howToPlay: [
+      "大家围坐一圈",
+      "播放音乐时传递花朵",
+      "音乐停止时花朵在谁手里，谁就表演节目"
+    ],
+    benefits: "锻炼反应能力，增进友谊",
+    category: "school",
+    duration: "15-20分钟",
+    materials: ["音乐播放器", "花或玩具"]
+  },
+  {
+    id: 115,
+    name: "抢椅子",
+    emoji: "💺",
+    description: "音乐响起时围绕椅子走，音乐停止时抢椅子",
+    howToPlay: [
+      "准备比人数少一张的椅子",
+      "播放音乐时围着椅子走",
+      "音乐停止时快速坐下抢椅子"
+    ],
+    benefits: "锻炼反应速度和竞争意识",
+    category: "school",
+    duration: "10-15分钟",
+    materials: ["椅子"]
+  },
+  {
+    id: 116,
+    name: "找朋友",
+    emoji: "👫",
+    description: "根据特征寻找相同点的朋友",
+    howToPlay: [
+      "老师说一个特征（如衣服颜色）",
+      "有相同特征的小朋友站在一起",
+      "大家一起认识新朋友"
+    ],
+    benefits: "培养观察能力和社交能力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 117,
+    name: "萝卜蹲",
+    emoji: "🥕",
+    description: "不同颜色萝卜轮流蹲的游戏",
+    howToPlay: [
+      "每人代表一种颜色的萝卜",
+      "听到自己颜色时要蹲下站起",
+      "加快速度增加趣味性"
+    ],
+    benefits: "锻炼反应能力和记忆力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 118,
+    name: "猜猜我是谁",
+    emoji: "❓",
+    description: "通过描述猜出小朋友的身份",
+    howToPlay: [
+      "一个小朋友描述自己的特征",
+      "其他小朋友猜是谁",
+      "可以描述衣着、爱好等"
+    ],
+    benefits: "增进相互了解，锻炼表达能力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 119,
+    name: "小小画家",
+    emoji: "🎨",
+    description: "合作完成一幅大型画作",
+    howToPlay: [
+      "准备大张画纸和彩笔",
+      "每个小朋友画一部分",
+      "合作完成整幅作品"
+    ],
+    benefits: "培养合作精神和创造力",
+    category: "school",
+    duration: "15-20分钟",
+    materials: ["大纸", "彩笔"]
+  },
+  {
+    id: 120,
+    name: "音乐椅子",
+    emoji: "🎵",
+    description: "结合音乐和椅子的集体游戏",
+    howToPlay: [
+      "大家围成圆圈走动",
+      "音乐停止时迅速找到伙伴",
+      "两人坐一把椅子"
+    ],
+    benefits: "培养合作能力和反应速度",
+    category: "school",
+    duration: "10-15分钟",
+    materials: ["椅子"]
+  },
+  {
+    id: 121,
+    name: "传话游戏",
+    emoji: "🗣️",
+    description: "依次传话看最后是谁传得准确",
+    howToPlay: [
+      "排成一行或一圈",
+      "老师在第一个小朋友耳边说一句话",
+      "依次传下去看最后是否一致"
+    ],
+    benefits: "锻炼听力和语言表达能力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 122,
+    name: "拍拍手",
+    emoji: "👏",
+    description: "跟随节奏拍手的音乐游戏",
+    howToPlay: [
+      "跟随老师的节拍",
+      "一起拍手、拍腿、打响指",
+      "可以变换不同节奏"
+    ],
+    benefits: "培养节奏感和协作能力",
+    category: "school",
+    duration: "5-10分钟"
+  },
+  {
+    id: 123,
+    name: "找宝藏",
+    emoji: "💎",
+    description: "在教室或操场寻找隐藏的物品",
+    howToPlay: [
+      "老师提前藏好一些小物品",
+      "给出线索让小朋友们寻找",
+      "找到后可以分享给其他小朋友"
+    ],
+    benefits: "锻炼观察能力和探索精神",
+    category: "school",
+    duration: "15-20分钟",
+    materials: ["小玩具或贴纸"]
+  },
+  {
+    id: 124,
+    name: "小动物模仿",
+    emoji: "🐾",
+    description: "模仿不同动物的特征和习性",
+    howToPlay: [
+      "老师说出一种动物",
+      "小朋友们模仿该动物的动作和叫声",
+      "可以比赛谁模仿得最像"
+    ],
+    benefits: "增长动物知识，锻炼表现力",
+    category: "school",
+    duration: "10-15分钟"
+  },
+  {
+    id: 125,
+    name: "数字抱团",
+    emoji: "🔢",
+    description: "根据数字提示抱团的游戏",
+    howToPlay: [
+      "老师喊出一个数字",
+      "相应数量的小朋友迅速抱成一团",
+      "多出或不够的人可以轮流当裁判"
+    ],
+    benefits: "学习数字概念，增进友谊",
+    category: "school",
+    duration: "10-15分钟"
+  },
 ]
 
 // 分类信息
@@ -1286,4 +1865,5 @@ export const categories = {
   cognitive: { name: '认知游戏', emoji: '🧠', color: 'from-cyan-400 to-teal-400' },
   social: { name: '社交情感', emoji: '💝', color: 'from-pink-400 to-rose-400' },
   sensory: { name: '感官探索', emoji: '✨', color: 'from-amber-400 to-orange-400' },
+  school: { name: '幼儿园游戏', emoji: '🏫', color: 'from-green-400 to-emerald-400' },
 }
