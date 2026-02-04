@@ -33,38 +33,38 @@ export function GameList({ onBack }: GameListProps) {
   ]
 
   return (
-    <div className="space-y-5 animate-fade-in">
+    <div className="space-y-5">
       {/* 顶部导航 */}
       <div className="flex items-center justify-between">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm text-gray-600 hover:text-gray-900 hover:shadow-md transition-all"
+          className="flex items-center gap-2 px-5 py-2.5 clay-raised text-sm font-bold"
         >
           <ArrowLeft size={18} />
-          <span className="text-sm font-medium">返回抽游戏</span>
+          <span>返回抽游戏</span>
         </button>
       </div>
 
       {/* 标题区域 */}
-      <div className="text-center py-2">
-        <div className="inline-flex items-center gap-2 mb-2">
-          <span className="text-3xl">📚</span>
-          <h2 className="text-2xl font-black text-gray-800">游戏宝典</h2>
+      <div className="text-center py-3">
+        <div className="inline-flex items-center gap-2 mb-3">
+          <span className="text-3xl animate-bounce-soft">📚</span>
+          <h2 className="text-2xl font-black text-gradient-indigo">游戏宝典</h2>
         </div>
-        <p className="text-gray-500 text-sm">
+        <p className="text-muted-foreground text-sm">
           {games.length} 个精选亲子游戏，适合 2-3 岁宝宝
         </p>
       </div>
 
       {/* 搜索框 */}
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
         <input
           type="text"
           placeholder="搜索游戏名称..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3.5 bg-white rounded-2xl shadow-sm border-2 border-gray-100 focus:border-orange-300 focus:outline-none transition-colors text-gray-700 placeholder-gray-400"
+          className="w-full pl-12 pr-4 py-3.5 clay-inset focus:outline-none text-foreground placeholder-muted-foreground"
         />
       </div>
 
@@ -77,29 +77,29 @@ export function GameList({ onBack }: GameListProps) {
             className={cn(
               "flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-all group",
               selectedCategory === key
-                ? "bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-lg shadow-orange-500/25 scale-[1.02] border border-transparent"
-                : "bg-white text-gray-600 hover:bg-gray-50 shadow-sm border border-gray-100 hover:shadow-md hover:scale-[1.02]"
+                ? "bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg shadow-indigo-500/25 scale-[1.02] border border-transparent"
+                : "clay-raised"
             )}
           >
             <div className="flex items-center gap-3">
               <div className={cn(
-                "w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-all",
+                "w-9 h-9 rounded-lg flex items-center justify-center text-lg transition-all",
                 selectedCategory === key
                   ? "bg-white/20"
-                  : "bg-gray-100 group-hover:bg-gray-200"
+                  : "bg-indigo-100 group-hover:bg-indigo-200"
               )}>
                 {emoji}
               </div>
               <span className={cn(
                 "font-bold",
-                selectedCategory === key ? "text-white" : "text-gray-700"
+                selectedCategory === key ? "text-white" : "text-foreground"
               )}>{name}</span>
             </div>
             <span className={cn(
               "px-2.5 py-0.5 rounded-full text-xs font-bold min-w-[24px] h-6 flex items-center justify-center",
               selectedCategory === key
                 ? "bg-white/30 text-white"
-                : "bg-gray-100 text-gray-600"
+                : "bg-indigo-100 text-foreground"
             )}>
               {count}
             </span>
@@ -116,9 +116,9 @@ export function GameList({ onBack }: GameListProps) {
               key={game.id}
               onClick={() => setSelectedGame(game)}
               className={cn(
-                "relative overflow-hidden p-4 rounded-2xl text-left transition-all",
-                "bg-white shadow-sm hover:shadow-lg border-2 border-gray-50 hover:border-gray-100",
-                "active:scale-[0.98] animate-fade-in"
+                "relative overflow-hidden p-5 rounded-2xl text-left transition-all",
+                "clay-raised",
+                "active:scale-[0.98] animate-clay-pop"
               )}
               style={{ animationDelay: `${index * 0.02}s` }}
             >
@@ -130,24 +130,24 @@ export function GameList({ onBack }: GameListProps) {
 
               {/* emoji 图标 */}
               <div className={cn(
-                "w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3 bg-gradient-to-br",
+                "w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3 bg-gradient-to-br shadow-md",
                 category.color
               )}>
                 {game.emoji}
               </div>
 
               {/* 游戏名称 */}
-              <h3 className="font-bold text-gray-800 text-sm mb-1 line-clamp-1">
+              <h3 className="font-bold text-foreground text-sm mb-2 line-clamp-1">
                 {game.name}
               </h3>
 
               {/* 描述 */}
-              <p className="text-xs text-gray-500 line-clamp-2 mb-2">
+              <p className="text-xs text-muted-foreground line-clamp-2 mb-3">
                 {game.description}
               </p>
 
               {/* 时长 */}
-              <div className="flex items-center gap-1 text-gray-400 text-xs">
+              <div className="flex items-center gap-1 text-muted-foreground text-xs">
                 <Clock size={10} />
                 {game.duration}
               </div>
@@ -158,9 +158,9 @@ export function GameList({ onBack }: GameListProps) {
 
       {filteredGames.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-5xl mb-4">🔍</div>
-          <p className="text-gray-500 font-medium">没有找到相关游戏</p>
-          <p className="text-gray-400 text-sm mt-1">试试其他关键词？</p>
+          <div className="text-5xl mb-4 animate-bounce-soft">🔍</div>
+          <p className="text-muted-foreground font-bold">没有找到相关游戏</p>
+          <p className="text-muted-foreground text-sm mt-1">试试其他关键词？</p>
         </div>
       )}
 
@@ -185,12 +185,12 @@ function GameDetailModal({ game, onClose }: GameDetailModalProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
       onClick={onClose}
     >
       <div 
         className={cn(
-          "w-full max-w-md max-h-[85vh] overflow-y-auto rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl animate-slide-up"
+          "w-full max-w-md max-h-[85vh] overflow-y-auto rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl animate-clay-pop"
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -202,20 +202,20 @@ function GameDetailModal({ game, onClose }: GameDetailModalProps) {
           {/* 关闭按钮 */}
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
+            className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors shadow-sm"
           >
             <X size={20} className="text-white" />
           </button>
 
           {/* 分类标签 */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 rounded-full text-white text-xs font-semibold mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/20 rounded-full text-white text-xs font-bold mb-4 shadow-sm">
             {category.emoji} {category.name}
           </span>
 
           {/* emoji 和标题 */}
           <div className="text-center">
-            <div className="text-7xl mb-3 drop-shadow-lg">{game.emoji}</div>
-            <h2 className="text-2xl font-black text-white drop-shadow-md">{game.name}</h2>
+            <div className="text-7xl mb-3 drop-shadow-lg animate-bounce-soft">{game.emoji}</div>
+            <h2 className="text-2xl font-black text-white drop-shadow-md text-shadow">{game.name}</h2>
             <p className="text-white/90 mt-2">{game.description}</p>
             <div className="flex items-center justify-center gap-1 mt-3 text-white/80 text-sm">
               <Clock size={14} />
@@ -227,21 +227,21 @@ function GameDetailModal({ game, onClose }: GameDetailModalProps) {
         {/* 内容区域 */}
         <div className="bg-white p-6 space-y-5">
           {/* 玩法步骤 */}
-          <div>
-            <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <Sparkles size={16} className="text-orange-500" />
+          <div className="clay-inset">
+            <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
+              <Sparkles size={16} className="text-accent" />
               怎么玩
             </h3>
             <ol className="space-y-3">
               {game.howToPlay.map((step, i) => (
                 <li key={i} className="flex gap-3">
                   <span className={cn(
-                    "w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 text-white bg-gradient-to-br",
+                    "w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 text-white bg-gradient-to-br shadow-sm",
                     category.color
                   )}>
                     {i + 1}
                   </span>
-                  <span className="text-gray-600 pt-0.5">{step}</span>
+                  <span className="text-foreground pt-0.5">{step}</span>
                 </li>
               ))}
             </ol>
@@ -249,15 +249,15 @@ function GameDetailModal({ game, onClose }: GameDetailModalProps) {
 
           {/* 准备材料 */}
           {game.materials && game.materials.length > 0 && (
-            <div>
-              <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+            <div className="clay-inset">
+              <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
                 📦 需要准备
               </h3>
               <div className="flex flex-wrap gap-2">
                 {game.materials.map((item, i) => (
                   <span 
                     key={i}
-                    className="px-4 py-2 bg-gray-100 rounded-full text-gray-700 text-sm font-medium"
+                    className="px-4 py-2 bg-indigo-100 rounded-full text-foreground text-sm font-bold"
                   >
                     {item}
                   </span>
@@ -267,20 +267,11 @@ function GameDetailModal({ game, onClose }: GameDetailModalProps) {
           )}
 
           {/* 好处 */}
-          <div className={cn(
-            "p-4 rounded-2xl bg-gradient-to-br",
-            category.color.replace('from-', 'from-').replace('to-', 'to-'),
-            "opacity-10"
-          )}>
-            <div className={cn(
-              "p-4 rounded-2xl",
-              `bg-gradient-to-br ${category.color}`
-            )} style={{ background: 'linear-gradient(135deg, rgba(251,146,60,0.1), rgba(251,113,133,0.1))' }}>
-              <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
-                ✨ 对宝宝的好处
-              </h3>
-              <p className="text-gray-600">{game.benefits}</p>
-            </div>
+          <div className="clay-inset">
+            <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+              ✨ 对宝宝的好处
+            </h3>
+            <p className="text-foreground">{game.benefits}</p>
           </div>
         </div>
       </div>

@@ -12,29 +12,29 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
     <header className="pt-8 pb-6">
       {/* Logo */}
       <div className="flex items-center justify-center gap-3 mb-6">
-        <div className="relative">
-          <div className="w-12 h-12 bg-gradient-to-br from-sunny to-primary rounded-2xl flex items-center justify-center shadow-lg">
-            <Baby className="w-7 h-7 text-white drop-shadow-sm" />
+        <div className="relative animate-bounce-soft">
+          <div className="w-14 h-14 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center shadow-lg border-2 border-indigo-100">
+            <Baby className="w-8 h-8 text-white drop-shadow-sm" />
           </div>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-mint rounded-full flex items-center justify-center shadow-sm">
-            <Sparkles className="w-2.5 h-2.5 text-white" />
+          <div className="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center shadow-sm border-2 border-white animate-pulse">
+            <Sparkles className="w-3 h-3 text-white" />
           </div>
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gradient-warm">宝宝游戏时间</h1>
+          <h1 className="text-2xl font-bold text-gradient-indigo text-shadow">宝宝游戏时间</h1>
           <p className="text-xs text-muted-foreground">每天一个亲子小游戏</p>
         </div>
       </div>
 
       {/* 导航 */}
-      <nav className="flex justify-center gap-3">
+      <nav className="flex justify-center gap-4">
         <button
           onClick={() => onNavigate('picker')}
           className={cn(
-            "flex items-center gap-2 px-5 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 press-effect",
+            "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 press-effect",
             currentView === 'picker'
-              ? "bg-gradient-to-r from-primary to-coral text-primary-foreground shadow-lg"
-              : "bg-card text-muted-foreground hover:bg-muted border-2 border-muted"
+              ? "bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg border-2 border-indigo-200"
+              : "bg-card text-muted-foreground hover:bg-muted border-2 border-muted clay-raised"
           )}
         >
           <Sparkles size={18} />
@@ -43,10 +43,10 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
         <button
           onClick={() => onNavigate('list')}
           className={cn(
-            "flex items-center gap-2 px-5 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 press-effect",
+            "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 press-effect",
             currentView === 'list'
-              ? "bg-gradient-to-r from-sky to-mint text-primary-foreground shadow-lg"
-              : "bg-card text-muted-foreground hover:bg-muted border-2 border-muted"
+              ? "bg-gradient-to-r from-accent to-primary text-accent-foreground shadow-lg border-2 border-orange-200"
+              : "bg-card text-muted-foreground hover:bg-muted border-2 border-muted clay-raised"
           )}
         >
           <List size={18} />

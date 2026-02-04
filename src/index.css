@@ -1,48 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Comic+Neue:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* 温暖的奶油色背景 */
-    --background: 40 60% 97%;
-    --foreground: 25 40% 20%;
+    /* 设计系统颜色 - Playful indigo + energetic orange */
+    --background: 238 70% 97%;
+    --foreground: 238 40% 15%;
 
-    /* 温暖橙色主色 - 活力亲切 */
-    --primary: 25 95% 60%;
+    /* 主色 - Indigo */
+    --primary: 238 80% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* 柔和粉紫辅助色 */
-    --secondary: 320 60% 70%;
+    /* 辅助色 - Light Indigo */
+    --secondary: 238 50% 75%;
     --secondary-foreground: 0 0% 100%;
 
-    /* 强调色 - 活力黄 */
-    --accent: 45 95% 55%;
-    --accent-foreground: 25 40% 15%;
+    /* CTA 色 - Orange */
+    --accent: 25 95% 55%;
+    --accent-foreground: 238 40% 15%;
 
     /* 柔和的灰色 */
-    --muted: 40 30% 92%;
-    --muted-foreground: 25 20% 45%;
+    --muted: 238 20% 92%;
+    --muted-foreground: 238 20% 45%;
 
     /* 卡片 */
     --card: 0 0% 100%;
-    --card-foreground: 25 40% 20%;
+    --card-foreground: 238 40% 15%;
 
-    /* 自定义温暖色系 */
-    --warm: 40 50% 96%;
-    --warm-light: 45 55% 98%;
-    --coral: 15 90% 65%;
-    --coral-light: 15 85% 92%;
-    --sky: 200 85% 65%;
-    --sky-light: 200 80% 92%;
-    --mint: 160 60% 60%;
-    --mint-light: 160 55% 92%;
-    --lavender: 280 60% 72%;
-    --lavender-light: 280 65% 93%;
-    --sunny: 45 95% 60%;
-    --sunny-light: 45 90% 92%;
+    /* 边框 */
+    --border: 238 30% 85%;
+    --input: 238 30% 85%;
+    --ring: 238 80% 60%;
 
-    --radius: 1.25rem;
+    /* 自定义颜色 */
+    --indigo-light: 238 70% 98%;
+    --orange-light: 25 85% 92%;
+
+    --radius: 1.5rem;
+  }
+
+  .dark {
+    --background: 238 40% 15%;
+    --foreground: 238 70% 97%;
+    --primary: 238 50% 75%;
+    --primary-foreground: 238 40% 15%;
+    --secondary: 238 80% 60%;
+    --secondary-foreground: 238 70% 97%;
+    --accent: 25 90% 65%;
+    --accent-foreground: 238 40% 15%;
+    --muted: 238 30% 25%;
+    --muted-foreground: 238 30% 70%;
+    --card: 238 35% 20%;
+    --card-foreground: 238 70% 97%;
+    --border: 238 30% 30%;
+    --input: 238 30% 30%;
+    --ring: 238 50% 75%;
   }
 }
 
@@ -52,13 +67,17 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased font-[Comic_Neue];
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-[Baloo_2] font-bold;
+  }
+
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -66,23 +85,69 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
+    @apply bg-primary/40 rounded-full hover:bg-primary/60;
+  }
+}
+
+@layer components {
+  .card-clay {
+    @apply bg-gradient-to-br from-white to-indigo-50 rounded-2xl p-6 shadow-[8px_8px_16px_#d8d5ff,_-8px_-8px_16px_#ffffff] transition-all duration-300 hover:shadow-[12px_12px_24px_#d8d5ff,_-12px_-12px_24px_#ffffff] hover:scale-[1.02] border-2 border-indigo-100;
+  }
+  
+  .btn-clay {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-[Baloo_2] font-bold py-3 px-6 rounded-full shadow-[4px_4px_8px_#d8d5ff,_-4px_-4px_8px_#ffffff] transition-all duration-300 hover:shadow-[6px_6px_12px_#d8d5ff,_-6px_-6px_12px_#ffffff] hover:scale-[1.05] active:shadow-[inset_4px_4px_8px_#d8d5ff,_inset_-4px_-4px_8px_#ffffff] active:scale-[0.98] border-2 border-indigo-200;
+  }
+  
+  .btn-clay-accent {
+    @apply bg-gradient-to-r from-orange-500 to-red-500 text-white font-[Baloo_2] font-bold py-3 px-6 rounded-full shadow-[4px_4px_8px_#ffd8d5,_-4px_-4px_8px_#ffffff] transition-all duration-300 hover:shadow-[6px_6px_12px_#ffd8d5,_-6px_-6px_12px_#ffffff] hover:scale-[1.05] active:shadow-[inset_4px_4px_8px_#ffd8d5,_inset_-4px_-4px_8px_#ffffff] active:scale-[0.98] border-2 border-orange-200;
+  }
+  
+  .clay-inset {
+    @apply bg-gradient-to-br from-indigo-50 to-white rounded-xl p-4 shadow-[inset_4px_4px_8px_#d8d5ff,_inset_-4px_-4px_8px_#ffffff] transition-all duration-300 border-2 border-indigo-100;
+  }
+  
+  .clay-raised {
+    @apply bg-gradient-to-br from-white to-indigo-50 rounded-xl p-4 shadow-[4px_4px_8px_#d8d5ff,_-4px_-4px_8px_#ffffff] transition-all duration-300 hover:shadow-[6px_6px_12px_#d8d5ff,_-6px_-6px_12px_#ffffff] border-2 border-indigo-100;
   }
 }
 
 @layer utilities {
-  .text-gradient-warm {
-    @apply bg-gradient-to-r from-primary via-coral to-secondary bg-clip-text text-transparent;
+  .content-auto {
+    content-visibility: auto;
   }
-
+  
+  .animate-clay-pop {
+    animation: clay-pop 0.6s ease-out;
+  }
+  
+  .animate-clay-press {
+    animation: clay-press 0.3s ease-in-out;
+  }
+  
+  .animate-bounce-soft {
+    animation: bounce-soft 2s infinite;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-gradient-indigo {
+    @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-clip-text text-transparent;
+  }
+  
   .hover-lift {
     @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
   }
-
+  
   .press-effect {
     @apply transition-transform active:scale-95;
   }
-
+  
   .card-playful {
     @apply bg-card rounded-3xl shadow-lg border-2 border-muted/50;
   }
@@ -94,5 +159,40 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@keyframes clay-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes clay-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
